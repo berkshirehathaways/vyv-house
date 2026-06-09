@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VYV House
 
-## Getting Started
+VYV House is the Next.js site for VYV House, a residency described on the site as “a house for builders with taste.” The repo holds the landing page, resident and guestbook data, shared styles, and metadata that shape the current site.
 
-First, run the development server:
+## Tech stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS v4
+- `lucide-react`
+
+## Local development
+
+Basic local development:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Checks before opening a PR:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run lint
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Run the production build locally:
 
-## Learn More
+```bash
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Repository map
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `src/app/page.tsx` - main landing page and inline content arrays
+- `src/app/globals.css` - global styles, CSS tokens, and reusable classes
+- `src/app/layout.tsx` - metadata, fonts, and document-level setup
+- `src/data/residents.ts` - current resident data
+- `src/data/guestbook.ts` - guestbook entries
+- `AGENTS.md` - coding-agent guidance for this repository
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Where to edit content
 
-## Deploy on Vercel
+- Update the page copy and section structure in `src/app/page.tsx`
+- Update resident profiles in `src/data/residents.ts`
+- Update guestbook entries in `src/data/guestbook.ts`
+- Update site metadata, fonts, and social preview details in `src/app/layout.tsx`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Design and copy guidance
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Preserve the existing logo and visual identity.
+- Treat the current site language as the source of truth.
+- `house protocol` is already an existing site concept.
+- Reuse existing CSS tokens and classes in `src/app/globals.css` before adding new ones.
+- Keep copy short, specific, and close to the existing VYV tone.
+- Avoid generic startup, coworking, accelerator, or corporate language.
+- Be careful with numeric claims like resident counts because the content data can change.
+
+## Notes for future contributors
+
+- This repo is intentionally content-led. Most visible changes should start in the data files or the landing page copy.
+- If you need to add a new pattern, check whether an existing token or reusable class already covers it.
+- Follow the repo guidance in `AGENTS.md` before making code changes.
+- Keep edits small and easy to review.
