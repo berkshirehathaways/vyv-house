@@ -40,6 +40,7 @@ npm run start
 - `src/data/residents.ts` - current resident data
 - `src/data/guestbook.ts` - guestbook entries
 - `AGENTS.md` - coding-agent guidance for this repository
+- `docs/brand/README.md` - lightweight brand guide for current site conventions
 
 ## Where to edit content
 
